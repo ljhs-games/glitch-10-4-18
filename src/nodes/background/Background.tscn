@@ -3,11 +3,16 @@
 [ext_resource path="res://nodes/background/matrix/Matrix.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/background/circuit-side.png" type="Texture" id=2]
 
-[node name="Background" type="Node2D" index="0"]
+[node name="Background" type="Node2D"]
 
 _sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Matrix" parent="." index="0" instance=ExtResource( 1 )]
+
+spawn_time_range = Vector2( 0.01, 0.03 )
 
 [node name="CircuitBoardSprite" type="Sprite" parent="." index="1"]
 

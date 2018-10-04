@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodes/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://nodes/player/diamond.png" type="Texture" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+
+scale = Vector2( 1.5, 1.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Angular", "Linear" ]
+__meta__ = {
+"_edit_group_": true
+}
+move_speed = 400.0
+down_speed = 200.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -0.379567, -24.7702, 20.3507, -0.702067, 1.20156, 23.8931, -21.2855, -0.175026 )
+
+
