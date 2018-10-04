@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://nodes/background/matrix/Matrix.tscn" type="PackedScene" id=1]
-[ext_resource path="res://nodes/background/circuit-side.png" type="Texture" id=2]
 
 [node name="Background" type="Node2D"]
 
@@ -11,15 +10,5 @@ __meta__ = {
 }
 
 [node name="Matrix" parent="." index="0" instance=ExtResource( 1 )]
-
-spawn_time_range = Vector2( 0.01, 0.03 )
-
-[node name="CircuitBoardSprite" type="Sprite" parent="." index="1"]
-
-position = Vector2( 0, 250 )
-scale = Vector2( 18.77, 18.77 )
-texture = ExtResource( 2 )
-centered = false
-_sections_unfolded = [ "Offset", "Transform" ]
 
 

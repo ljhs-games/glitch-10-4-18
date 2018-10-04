@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://nodes/attack-spawner/AttackSpawner.gd" type="Script" id=1]
+[ext_resource path="res://nodes/attack-spawner/Lightning.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodes/attack-spawner/Beam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/attack-spawner/Cross.tscn" type="PackedScene" id=4]
+
+[node name="AttackSpawner" type="Node2D"]
+
+script = ExtResource( 1 )
+lightning_pack = ExtResource( 2 )
+beam_pack = ExtResource( 3 )
+cross_pack = ExtResource( 4 )
+player_path = null
+lightning_speed = 500.0
+
+[node name="AttackTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 30.0
+one_shot = false
+autostart = true
+
+[node name="LightningTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="BeamTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="CrissCrossTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
+[connection signal="timeout" from="LightningTimer" to="." method="_on_LightningTimer_timeout"]
+
+[connection signal="timeout" from="BeamTimer" to="." method="_on_BeamTimer_timeout"]
+
+[connection signal="timeout" from="CrissCrossTimer" to="." method="_on_CrissCrossTimer_timeout"]
+
+

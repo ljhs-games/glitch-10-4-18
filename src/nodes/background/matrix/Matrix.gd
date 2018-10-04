@@ -1,8 +1,8 @@
 extends Node2D
 
 export (PackedScene) var matrix_line_pack
-export var matrix_line_speed = 600.0
-export var spawn_time_range = Vector2(0.01, 0.03)
+export var matrix_line_speed = 100.0
+export var spawn_time_range = Vector2(0.3, 0.5)
 
 func _ready():
 	reset_timer()

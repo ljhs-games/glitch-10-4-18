@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://nodes/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://nodes/player/diamond.png" type="Texture" id=2]
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 13.3333
+
+[node name="Player" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 1.5, 1.5 )
 input_pickable = false
@@ -27,5 +32,21 @@ texture = ExtResource( 2 )
 
 build_mode = 0
 polygon = PoolVector2Array( -0.379567, -24.7702, 20.3507, -0.702067, 1.20156, 23.8931, -21.2855, -0.175026 )
+
+[node name="DieArea" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DieArea" index="0"]
+
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="DieArea" to="." method="_on_DieArea_area_entered"]
 
 

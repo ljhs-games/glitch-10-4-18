@@ -29,3 +29,10 @@ func _input(event):
 			actions[ACTION.left] = -1
 		else:
 			actions[ACTION.left] = 0
+	elif event is InputEventMouseButton:
+		if event.pressed:
+			global_position = event.global_position
+
+func _on_DieArea_area_entered(area):
+	if(area.is_in_group("bad")):
+		get_tree().change_scene("res://scenes/TitleScreen.tscn")
