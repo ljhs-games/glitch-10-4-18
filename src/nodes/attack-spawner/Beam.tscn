@@ -93,7 +93,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 1, 0.226562, 1 )
+color = Color( 1, 0, 0, 1 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

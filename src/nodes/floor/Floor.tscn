@@ -16,14 +16,16 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 0, 10, 0, 20, 600, 20, 600, 10 )
+polygon = PoolVector2Array( 0, 10, 0, 30, 600, 30, 600, 10 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+position = Vector2( 0, -30 )
+scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 5, 600, 20 )
-_sections_unfolded = [ "Offset", "Region" ]
+region_rect = Rect2( 0, 5, 120, 20 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 
